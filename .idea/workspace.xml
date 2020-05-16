@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90f300c6-e9d0-42e0-9d0a-11d8ae7703dd" name="Default Changelist" comment="" />
+    <list default="true" id="90f300c6-e9d0-42e0-9d0a-11d8ae7703dd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/performance.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -115,6 +125,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1bcSzbabyJLU3bIRWrTlRDYcauB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -122,11 +133,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/layouts" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -144,7 +162,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588930151273</updated>
-      <workItem from="1588930156903" duration="30309000" />
+      <workItem from="1588930156903" duration="30424000" />
+      <workItem from="1589200493605" duration="507000" />
+      <workItem from="1589635397623" duration="1131000" />
     </task>
     <servers />
   </component>
@@ -156,10 +176,10 @@
       <screen x="0" y="23" width="1280" height="728" />
     </state>
     <state x="457" y="300" key="NewPhpFileDialog/0.23.1280.728@0.23.1280.728" timestamp="1589020266854" />
-    <state x="221" y="23" width="838" height="728" key="search.everywhere.popup" timestamp="1588980009219">
+    <state x="221" y="23" width="838" height="728" key="search.everywhere.popup" timestamp="1589200498290">
       <screen x="0" y="23" width="1280" height="728" />
     </state>
     <state x="221" y="23" width="838" height="1032" key="search.everywhere.popup/0.23.1280.725@0.23.1280.725" timestamp="1588933170490" />
-    <state x="221" y="23" width="838" height="728" key="search.everywhere.popup/0.23.1280.728@0.23.1280.728" timestamp="1588980009219" />
+    <state x="221" y="23" width="838" height="728" key="search.everywhere.popup/0.23.1280.728@0.23.1280.728" timestamp="1589200498290" />
   </component>
 </project>

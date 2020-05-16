@@ -9,7 +9,7 @@
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Club</th>
-                    <th scope="col">Last Trip</th>
+                    <th scope="col"><a href="{{ route('trips') }}">Last Trip</a></th>
                 </tr>
                 </thead>
                 <tbody>
