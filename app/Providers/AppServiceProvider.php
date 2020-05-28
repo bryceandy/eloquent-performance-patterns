@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Adds my custom query builder macros
      */
-    protected function registerQueryBuilderMacros()
+    private function registerQueryBuilderMacros()
     {
         Builder::macro('orderBySub', function ($query, $direction = 'desc') {
 
