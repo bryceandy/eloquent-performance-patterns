@@ -18,4 +18,4 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('trips', fn() => view('layouts.trips'))->name('trips');
+Route::get('users', 'UserController@index')->name('users');
