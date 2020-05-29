@@ -32,7 +32,7 @@
                     </tbody>
                 </table>
             </div>
+            {{ $friends->links() }}
         </div>
-        {{ $friends->links() }}
     </div>
 @endsection
