@@ -19,3 +19,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('users', 'UserController@index')->name('users');
+
+Route::post('user-search', function () {
+    return request('search');
+})->name('search-user');
