@@ -8,6 +8,7 @@ use Illuminate\View\View;
 class Notification extends Component
 {
     public string $type;
+
     public string $message;
 
     /**
