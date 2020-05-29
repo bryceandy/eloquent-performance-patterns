@@ -4,6 +4,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                <form
+                    class="form-inline mt-2 mb-5 w-75"
+                    method="POST"
+                    action="{{route('search-user')}}"
+                >
+                    <input class="form-control mr-sm-2" style="width: 80%" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
                 <table class="table table-dark">
                     <thead>
                     <tr>
