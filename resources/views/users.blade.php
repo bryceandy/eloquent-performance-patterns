@@ -9,6 +9,7 @@
                     method="POST"
                     action="{{route('search-user')}}"
                 >
+                    @csrf
                     <input
                         class="form-control mr-sm-2"
                         style="width: 80%;"
