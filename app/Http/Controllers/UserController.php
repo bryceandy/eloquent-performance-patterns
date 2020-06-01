@@ -18,10 +18,9 @@ class UserController extends Controller
 
     public function show(Request $request)
     {
-        $term = '%'.$request['term'].'%';
-
         $users = User::with('club')
-            ->where('name', 'LIKE', $term)
+            ->search($request['term'])
+            ->orderBy('name')
             ->paginate(10);
 
         return view('users', [ 'users' => $users]);

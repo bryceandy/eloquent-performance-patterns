@@ -144,4 +144,29 @@ class User extends Authenticatable
             ->limit(1)
         )->with('lastTrip');
     }
+
+    /**
+     * Scope to search user by their name and or club name
+     *
+     * @param $query
+     * @param string|null $terms
+     */
+    public function scopeSearch($query, string $terms = null)
+    {
+        collect(explode(' ', $terms))->filter()->each(function ($term) use ($query) {
+            $term = '%'.$term.'%';
+
+            $query->where(fn ($query) => $query
+                ->where('name', 'LIKE', $term)
+                ->orWhere('email', 'LIKE', $term)
+                //->orWhereHas('club', fn($query) => $query->where('name', 'LIKE', $term))
+                ->orWhereIn('club_id',/* fn($query) => $query
+                    ->select('id')
+                    ->from('clubs')
+                    ->where('name', 'LIKE', $term)*/
+                    Club::toBase()->where('name', 'LIKE', $term)->pluck('id')
+                )
+            );
+        });
+    }
 }
