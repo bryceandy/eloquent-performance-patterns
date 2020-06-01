@@ -80,43 +80,43 @@ class User extends Authenticatable
      */
     public function scopeVisibleTo($query, User $user)
     {
-        $query->where(function ($sub) use ($user) {
-            $sub->where('club_id', $user->club_id)
-                ->orWhereIn('id', $user->buddies->pluck('id'));
-        });
+        $query->where(fn ($sub) => $sub
+            ->where('club_id', $user->club_id)
+            ->orWhereIn('id', $user->buddies->pluck('id'))
+        );
     }
 
     public function scopeOrderByBuddiesFirst($query, User $user)
     {
-        $query->orderBySub(function ($sub) use ($user) {
-            $sub->selectRaw('true')
-                ->from('buddies')
-                ->whereColumn('buddies.buddy_id', 'users.id')
-                ->where('user_id', $user->id)
-                ->limit(1);
-        });
+        $query->orderBySub(fn ($sub) => $sub
+            ->selectRaw('true')
+            ->from('buddies')
+            ->whereColumn('buddies.buddy_id', 'users.id')
+            ->where('user_id', $user->id)
+            ->limit(1)
+        );
     }
 
     /*public function scopeWithLastTripDate($query)
     {
-        $query->addSubSelect('last_trip_at', function($sub) {
-            $sub->select('when_at')
-                ->from('trips')
-                ->whereColumn('user_id', 'users.id')
-                ->latest('when_at')
-                ->limit(1);
-        });
+        $query->addSubSelect('last_trip_at', fn($sub) => $sub
+            ->select('when_at')
+            ->from('trips')
+            ->whereColumn('user_id', 'users.id')
+            ->latest('when_at')
+            ->limit(1)
+        );
     }
 
     public function scopeWithLastTripLake($query)
     {
-        $query->addSubSelect('last_trip_lake', function($sub) {
-            $sub->select('lake')
-                ->from('trips')
-                ->whereColumn('user_id', 'users.id')
-                ->latest('when_at')
-                ->limit(1);
-        });
+        $query->addSubSelect('last_trip_lake', fn($sub) => $sub
+            ->select('lake')
+            ->from('trips')
+            ->whereColumn('user_id', 'users.id')
+            ->latest('when_at')
+            ->limit(1)
+        );
     }*/
 
     /**
@@ -136,12 +136,12 @@ class User extends Authenticatable
      */
     public function scopeWithLastTrip($query)
     {
-        $query->addSubSelect('last_trip_id', function($sub) {
-           $sub->select('id')
-               ->from('trips')
-               ->whereColumn('user_id', 'users.id')
-               ->latest('when_at')
-               ->limit(1);
-        })->with('lastTrip');
+        $query->addSubSelect('last_trip_id', fn($sub) => $sub
+            ->select('id')
+            ->from('trips')
+            ->whereColumn('user_id', 'users.id')
+            ->latest('when_at')
+            ->limit(1)
+        )->with('lastTrip');
     }
 }
