@@ -151,7 +151,7 @@ class User extends Authenticatable
      * @param $query
      * @param string|null $terms
      */
-    public function scopeSearch($query, string $terms = null)
+    public function scopeSearch($query, string $terms)
     {
         collect(explode(' ', $terms))->filter()->each(function ($term) use ($query) {
             $term = '%'.$term.'%';
