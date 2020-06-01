@@ -7,7 +7,7 @@
                 <form
                     class="form-inline mt-2 mb-5 w-75"
                     method="POST"
-                    action="{{route('search-user')}}"
+                    action="{{ route('users') }}"
                 >
                     @csrf
                     <input
@@ -16,30 +16,38 @@
                         type="search"
                         placeholder="Search user"
                         aria-label="Search"
-                        name="search"
+                        name="term"
                     />
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
-                <table class="table table-dark">
-                    <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Club</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach( $users as $user)
+                @if( ! count($users))
+                    <div style="color: gray">
+                        There are no users found!
+                    </div>
+                    @else
+                    <table class="table table-dark">
+                        <thead>
                         <tr>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->club->name }}</td>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Club</th>
                         </tr>
-                    @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                        @foreach( $users as $user)
+                            <tr>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->club->name }}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                @endif
             </div>
-            {{ $users->links() }}
+            @if(count($users))
+                {{ $users->links() }}
+            @endif
         </div>
     </div>
 @endsection
