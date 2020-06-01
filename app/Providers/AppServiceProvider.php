@@ -37,11 +37,13 @@ class AppServiceProvider extends ServiceProvider
 
             list($query, $bindings) = $this->createSub($query);
 
-            return $this->addBinding($bindings, 'order')->orderBy(DB::raw('('.$query.')'), $direction);
+            return $this->addBinding($bindings, 'order')
+                ->orderBy(DB::raw('('.$query.')'), $direction);
         });
 
         Builder::macro('addSubSelect', function($column, $query) {
             if (is_null($this->columns)) {
+
                 $this->select($this->from.'.*');
             }
 
